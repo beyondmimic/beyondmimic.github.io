@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="From Motion Tracking to Versatile Humanoid Control via Guided Diffusion">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BeyondMimic</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+
+<body>
+
+  <section class="hero is-link is-fullheight video" style="overflow: hidden; position:relative;">
+    <div class="hero-video" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 101%; height: 101%;">
+      <video playsinline autoplay muted loop style="width: 100%; height: 100%; object-fit: cover;">
+        <source src=" ./static/videos/teaser.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="hero-video is-hidden-tablet is-inline-block-mobile"
+      style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 101%; height: 101%;">
+      <video playsinline autoplay muted loop style="width: 100%; height: 100%; object-fit: cover;">
+        <source src=" ./static/videos/teaser.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="overlay"></div>
+    
+    <div style="position: absolute; bottom: 20px; right: 20px; color: white; padding: 10px 15px; border-radius: 8px; font-size: 0.9rem; max-width: 380px; z-index: 10; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);">
+      <div style="margin-bottom: 5px;"><sup>*</sup> Equal contribution; order decided by coin toss.</div>
+      <div><sup>†</sup> Equal advising; order mirrors the coin toss, with the other lab listed last.</div>
+    </div>
+  
+  <div class="hero-head is-hidden-mobile">
+    <header class="navbar">
+      <div class="container is-size-5">
+        <div class="navbar-menu">
+          <div class="navbar-end">
+            <a class="navbar-item pl-4 pr-4" href="https://arxiv.org/abs/2508.08241" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);">
+              <span class="icon" style="margin-right:5px;">
+                <i class="ai ai-arxiv"></i>
+              </span>
+              <span>arXiv</span>
+            </a>
+            <a href="https://youtu.be/RS_MtKVIAzY" class="navbar-item pl-4 pr-4" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);">
+              <span class="icon" style="margin-right:5px;">
+                <i class="fab fa-youtube"></i>
+              </span>
+              <span>Video</span>
+            </a>
+            <span class="navbar-item  pl-4 pr-4">
+              <a href="https://github.com/HybridRobotics/whole_body_tracking" class="button is-inverted is-large">
+                <span class="icon">
+                  <i class="fab fa-github"></i>
+                </span>
+                <span>Code</span>
+              </a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </header>
+  </div>
+
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <h1 class="title is-1 publication-title is-size-1-mobile" style="font-size: 9rem; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);">
+        BeyondMimic
+      </h1>
+      <h1 class="subtitle is-1 publication-title is-size-4-mobile" style="font-size: 3.5rem; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);">
+        From Motion Tracking to Versatile Humanoid Control via Guided Diffusion
+      </h1>
+      <p style="font-size: 1.5rem; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);">
+        <a href="https://qiayuanl.github.io/">Qiayuan Liao<sup>*</sup></a>, 
+        <a href="https://www.takaratruong.com/">Takara Truong<sup>*</sup></a>, 
+        <a href="">Xiaoyu Huang<sup>*</sup></a>,
+        <a href="https://guytevet.github.io/">Guy Tevet</a>,
+        <a href="https://hybrid-robotics.berkeley.edu/koushil/">Koushil Sreenath<sup>†</sup></a>,
+        <a href="https://tml.stanford.edu/people/karen-liu">C. Karen Liu<sup>†</sup></a>
+      </p>
+    </div>
+  </div>
+
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-half">
+        <h2 class="title is-2">Video</h2>
+        <div class="publication-video" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+          <iframe src="https://www.youtube.com/embed/RS_MtKVIAzY"
+                  frameborder="0"
+                  allow="autoplay; encrypted-media"
+                  allowfullscreen
+                  style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"></iframe>
+        </div>
+      </div>
+      <div class="column is-half">
+        <h2 class="title is-2">Abstract</h2>
+        <div class="content has-text-justified">
+          <p class="abstract-text" style="font-size: 0.95rem; line-height: 1.5;">
+            Learning skills from human motions offers a promising path toward generalizable policies for whole-body humanoid control, yet two key cornerstones are missing: (1) a scalable, high-quality motion tracking framework that faithfully transforms kinematic references into robust, extremely dynamic motions on real hardware, and (2) a distillation approach that can effectively learn these motion primitives and compose them to solve downstream tasks. We address these gaps with <strong> BeyondMimic, a real-world framework to learn from human motions for versatile and naturalistic humanoid control via guided diffusion </strong>. Our framework provides a <strong> motion tracking pipeline, capable of challenging skills such as jumping spins, sprinting, and cartwheel </strong> with state-of-the-art motion quality. Beyond mimicking, we further introduce a <strong> unified diffusion policy that enables zero-shot task-specific control at test time using simple cost functions </strong>. Deployed on hardware, BeyondMimic performs diverse tasks including waypoint navigation, joystick teleoperation, and obstacle avoidance, bridging sim-to-real motion tracking and flexible synthesis of human motion primitives for whole-body control.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container">
+    <h2 class="title is-2" style="text-align: center;">Our open-source motion tracking pipline can track motion stably and repeatably</h2>
+    <div class="columns is-centered">
+      <div class="column is-full-width is-centered has-text-centered">
+        <video autoplay loop muted playsinline src="./static/videos/motion_tracking/prep_IMG_2643.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+      </div>
+      <div class="column is-full-width is-centered has-text-centered">
+        <video autoplay loop muted playsinline src="./static/videos/motion_tracking/prep_IMG_2669.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+      </div>
+        <div class="column is-full-width is-centered has-text-centered">
+        <video autoplay loop muted playsinline src="./static/videos/motion_tracking/prep_IMG_2661.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="title is-2" style="text-align: center;">Policies trained with BeyondMimic pipeline on the LAFAN1 Dataset</h2>
+    <p class="has-text-centered" style="font-size: 1.2rem; margin-bottom: 2rem;">
+      Below are 24 clips from policies trained on 14 distinct ~3-minute sequences, all using <strong>exactly the same MDP setup and hyperparameters<strong></strong>.
+    </p>
+    <div id="results-carousel" class="carousel results-carousel">
+      <!-- highlights -->
+      <div class="column is-full-width is-centered has-text-centered">
+        <!-- cartwheel -->
+        <video autoplay loop muted playsinline src="./static/videos/motion_tracking/prep_IMG_4081.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+        <!-- running -->
+        <video autoplay loop muted playsinline src="./static/videos/motion_tracking/prep_IMG_2747.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+      </div>
+      <div class="column is-full-width is-centered has-text-centered">
+        <!-- jumping 360 -->
+        <video autoplay loop muted playsinline src="./static/videos/motion_tracking/prep_IMG_2736.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+        <!-- fall recovery -->
+        <video autoplay loop muted playsinline src="./static/videos/motion_tracking/prep_IMG_2704.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+      </div>
+
+      <!-- dance -->
+      <div class="column is-full-width is-centered has-text-centered">
+        <!-- shuffling -->
+        <video autoplay loop muted playsinline src="./static/videos/motion_tracking/prep_IMG_2706.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+        <!-- handwave dance -->
+        <video autoplay loop muted playsinline src="./static/videos/motion_tracking/prep_IMG_2715.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+      </div>
+      <div class="column is-full-width is-centered has-text-centered">
+        <!-- social dance -->
+        <video autoplay loop muted playsinline src="./static/videos/motion_tracking/prep_IMG_2718.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+        <!-- full dance -->
+        <video autoplay loop muted playsinline src="./static/videos/motion_tracking/prep_IMG_2750.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+      </div>
+      <div class="column is-full-width is-centered has-text-centered">
+        <!-- before handwave dance -->
+        <video autoplay loop muted playsinline src="./static/videos/motion_tracking/prep_IMG_2711.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+        <!-- missing !!! -->
+        <video autoplay loop muted playsinline src="./static/videos/motion_tracking/prep_IMG_2707.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+      </div>
+
+      <!-- getup -->
+      <div class="column is-full-width is-centered has-text-centered">
+        <!-- getup0 -->
+        <video autoplay loop muted playsinline src="./static/videos/motion_tracking/prep_IMG_2663.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+        <!-- getup1 -->
+        <video autoplay loop muted playsinline src="./static/videos/motion_tracking/prep_IMG_2664.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+      </div>
+      <div class="column is-full-width is-centered has-text-centered">
+        <!-- getup2 -->
+        <video autoplay loop muted playsinline src="./static/videos/motion_tracking/prep_IMG_2665.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+        <!-- getup3 -->
+        <video autoplay loop muted playsinline src="./static/videos/motion_tracking/prep_IMG_2667.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+      </div>
+
+      <!-- others -->
+      <div class="column is-full-width is-centered has-text-centered">
+        <!-- jumping -->
+        <video autoplay loop muted playsinline src="./static/videos/motion_tracking/prep_IMG_2671.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+        <!-- fancy jumping -->
+        <video autoplay loop muted playsinline src="./static/videos/motion_tracking/prep_IMG_2676.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+      </div>
+      <div class="column is-full-width is-centered has-text-centered">
+        <!-- sports -->
+        <video autoplay loop muted playsinline src="./static/videos/motion_tracking/prep_IMG_2678.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+        <!-- grandma walk -->
+        <video autoplay loop muted playsinline src="./static/videos/motion_tracking/prep_IMG_2688.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+      </div>
+      <div class="column is-full-width is-centered has-text-centered">
+        <!-- jogging -->
+        <video autoplay loop muted playsinline src="./static/videos/motion_tracking/prep_IMG_2689.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+        <!-- sprint -->
+        <video autoplay loop muted playsinline src="./static/videos/motion_tracking/prep_IMG_2720.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+      </div>
+
+      <!-- walking -->
+      <div class="column is-full-width is-centered has-text-centered">
+        <!-- quick spinning -->
+        <video autoplay loop muted playsinline src="./static/videos/motion_tracking/prep_IMG_2652.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+        <!-- high knees -->
+        <video autoplay loop muted playsinline src="./static/videos/motion_tracking/prep_IMG_2725.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+      </div>
+      <div class="column is-full-width is-centered has-text-centered">
+        <!-- happy walking -->
+        <video autoplay loop muted playsinline src="./static/videos/motion_tracking/prep_IMG_2745.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+        <!-- march -->
+        <video autoplay loop muted playsinline src="./static/videos/motion_tracking/prep_IMG_2686.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container">
+    <h2 class="title is-2" style="text-align: center;">Beyond mimicking, we distill selected policies into a single diffusion model with test-time guidance for zero-shot downstream tasks</h2>
+    <p class="has-text-centered" style="font-size: 1.2rem; margin-bottom: 2rem;">
+      Arbitrary joystick control, waypoint following, and obstacle avoidance<br>
+      <em>(Mocap is used for determining locations of waypoints, obstacles, and for helping state estimation)</em>
+    </p>
+    <div id="results-carousel" class="carousel results-carousel">
+      <!-- highlights -->
+      <div class="column is-full-width is-centered has-text-centered">
+        <!-- sdf walking 1-->
+        <video autoplay loop muted playsinline src="./static/videos/diffusion/prep_C1921.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+        <!-- box throwing 0-->
+        <video autoplay loop muted playsinline src="./static/videos/diffusion/prep_C1909.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+      </div>
+      <div class="column is-full-width is-centered has-text-centered">
+        <!-- waypoint + walking + human -->
+        <video autoplay loop muted playsinline src="./static/videos/diffusion/prep_C1876.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+        <!-- joystick jogging -->
+        <video autoplay loop muted playsinline src="./static/videos/diffusion/prep_C1915.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+      </div>
+
+      <!-- others -->
+      <div class="column is-full-width is-centered has-text-centered">
+        <!-- joystick + perturbation 1 -->
+        <video autoplay loop muted playsinline src="./static/videos/diffusion/prep_C1890.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+        <!-- sdf walking 0-->
+        <video autoplay loop muted playsinline src="./static/videos/diffusion/prep_C1918.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+      </div>
+      <div class="column is-full-width is-centered has-text-centered">
+        <!-- uncontdition + perturbation -->
+        <video autoplay loop muted playsinline src="./static/videos/diffusion/prep_C1895.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+        <!-- joystick + perturbation 0 -->
+        <video autoplay loop muted playsinline src="./static/videos/diffusion/prep_C1893.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+      </div>
+      <div class="column is-full-width is-centered has-text-centered">
+        <!-- waypoint + perturbation -->
+        <video autoplay loop muted playsinline src="./static/videos/diffusion/prep_C1867.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+        <!-- waypoint + jogging + human -->
+        <video autoplay loop muted playsinline src="./static/videos/diffusion/prep_C1881.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+      </div>
+      <div class="column is-full-width is-centered has-text-centered">
+        <!-- natural walking joystick -->
+        <video autoplay loop muted playsinline src="./static/videos/diffusion/prep_C1883.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+        <!-- box throwing 1-->
+        <video autoplay loop muted playsinline src="./static/videos/diffusion/prep_C1907.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+      </div>
+      <div class="column is-full-width is-centered has-text-centered">
+        <!-- sdf jogging 0 -->
+        <video autoplay loop muted playsinline src="./static/videos/diffusion/prep_C1926.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+        <!-- sdf jogging 1 -->
+        <video autoplay loop muted playsinline src="./static/videos/diffusion/prep_C1934.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+      </div>
+      <div class="column is-full-width is-centered has-text-centered">
+        <!-- joystick jogging -->
+        <video autoplay loop muted playsinline src="./static/videos/diffusion/prep_C1890.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+        <!-- waypoint0 -->
+        <video autoplay loop muted playsinline src="./static/videos/diffusion/prep_C1868.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+      </div>
+      <div class="column is-full-width is-centered has-text-centered">
+        <!-- waypoint1 -->
+        <video autoplay loop muted playsinline src="./static/videos/diffusion/prep_C1869.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+        <!-- waypoint2 -->
+        <video autoplay loop muted playsinline src="./static/videos/diffusion/prep_C1870.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <p>Page template borrowed from <a href="https://nerfies.github.io/"><span class="dnerf">Nerfies</span></a>, <a href="https://umi-on-legs.github.io/">UMI on Legs</a>.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
